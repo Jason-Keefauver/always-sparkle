@@ -14,10 +14,13 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 // DYNAMIC COPYRIGHT YEAR
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// HAMBURGER TOGGLE
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    hamburger.classList.toggle('active');
+
+const bubble = document.getElementById("floatingBubble");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    bubble.classList.add("show");
+  } else {
+    bubble.classList.remove("show");
+  }
 });

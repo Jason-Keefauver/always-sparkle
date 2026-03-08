@@ -27,45 +27,56 @@ nav {
 }
 
 /* LOGO */
+
+
+
+//* NAVBAR */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+/* NAV CONTAINER */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+/* LOGO */
 nav .logo img {
-    height: 50px;
-    width: auto;
-    display: block;
-    transition: height 0.2s ease;
+  height: 69px;       
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
 }
-nav .logo img:hover { transform: scale(1.05); transition: transform 0.2s ease; }
 
-/* NAV LINKS */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+nav .logo img:hover {
+  transform: scale(1.05);
 }
-.nav-links li a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-.nav-links li a:hover { color: #FF6B61; transform: translateY(-2px); }
 
-/* MOBILE NAV */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;      /* full viewport dropdown */
-    top: 0;
-    right: -100%;         /* hidden offscreen */
-    height: 100vh;
-    width: 250px;
-    background: rgba(255,255,255,0.97);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    transition: right 0.3s ease;
-    z-index: 999;
-  }
+/* NAV BAR CTA BUTTON */
+.nav-cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1E5D6A;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 42px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.nav-cta-btn:hover {
+  background: #FF6B61;
+  transform: translateY(-2px);
+}
 
   .nav-links.show {
     right: 0;             /* slide in */
@@ -78,25 +89,8 @@ nav .logo img:hover { transform: scale(1.05); transition: transform 0.2s ease; }
   .hamburger {
     display: flex;
   }
-}
 
-/* HAMBURGER ICON */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #222;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
 
 /* HERO */
 
@@ -139,7 +133,7 @@ header h1, header p, header .btn {
 header h1 { 
     animation-delay: 0.2s; 
     font-size: 48px; 
-    color: ##1E5D6A; 
+    color: #ffffff; 
     margin-bottom: 20px; 
     max-width: 800px; 
 }
@@ -157,7 +151,7 @@ header p {
     background: #1E5D6A;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 42px;
     font-weight: bold;
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -195,18 +189,52 @@ h2 { text-align: center; margin-bottom: 40px; }
 .review { max-width: 700px; margin:0 auto 25px auto; text-align: center; border-left:4px solid #1E5D6A; padding-left:20px; }
 .review p { font-style: italic; margin-bottom:10px; font-size:16px; }
 
-/* CALL BUTTON */
-.call-btn {
-    position: fixed; bottom: 20px; right: 20px;
-    background: #1E5D6A; color: #fff;
-    padding: 16px 22px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
-    z-index: 10;
+/* CONTACT US  */
+
+#contact {
+    text-align: center;
 }
+
+/* FLOATING BUBBLE CONTAINER */
+.floating-bubble {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;              /* hidden by default */
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* SHOW WHEN SCROLLED */
+.floating-bubble.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTON STYLE */
+.floating-bubble .bubble-btn {
+  display: inline-block;
+  padding: 14px 20px;
+  background: #FF6B61;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: all 0.2s ease;
+}
+
+.floating-bubble .bubble-btn:hover {
+  transform: translateY(-3px);
+  background: #E84E4B;
+}
+
+
 .call-btn:hover { transform: translateY(-3px); }
 
 /* FOOTER */
