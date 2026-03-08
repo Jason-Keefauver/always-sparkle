@@ -1,0 +1,212 @@
+/* RESET + BASIC STYLES */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Arial', sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; color: #333; background: #fff; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+
+/* CONTAINER */
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: padding 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+/* LOGO */
+nav .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: height 0.2s ease;
+}
+nav .logo img:hover { transform: scale(1.05); transition: transform 0.2s ease; }
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-links li a:hover { color: #FF6B61; transform: translateY(-2px); }
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;      /* full viewport dropdown */
+    top: 0;
+    right: -100%;         /* hidden offscreen */
+    height: 100vh;
+    width: 250px;
+    background: rgba(255,255,255,0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    right: 0;             /* slide in */
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* HERO */
+header {
+    position: relative;
+    background: url('https://source.unsplash.com/1600x900/?clean,home,interior') no-repeat center center;
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: visible;
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+header h1, header p, header .btn {
+    position: relative; z-index: 1;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+header h1 { animation-delay: 0.2s; font-size: 48px; color: #1E5D6A; margin-bottom: 20px; max-width: 800px; }
+header p { animation-delay: 0.4s; font-size: 22px; margin-bottom: 30px; max-width: 600px; }
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #1E5D6A;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover { background: #FF6B61; transform: translateY(-2px); }
+
+/* ANIMATION KEYFRAMES */
+@keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+/* SECTIONS */
+section { padding: 60px 20px; }
+h2 { text-align: center; margin-bottom: 40px; }
+
+/* FADE-IN */
+.fade-in, .services-grid, .review { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.show, .services-grid.show, .review.show { opacity: 1; transform: translateY(0); }
+
+/* SERVICES */
+.services-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.service {
+    background: #fff; padding: 30px; border-radius: 12px;
+    flex: 1 1 250px; max-width: 320px; text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+.service h3 { margin-top:0; margin-bottom:10px; font-size:20px; color:#1E5D6A; }
+
+/* REVIEWS */
+.reviews { background: #f4f7f9; padding: 60px 20px; }
+.review { max-width: 700px; margin:0 auto 25px auto; text-align: center; border-left:4px solid #1E5D6A; padding-left:20px; }
+.review p { font-style: italic; margin-bottom:10px; font-size:16px; }
+
+/* CALL BUTTON */
+.call-btn {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #1E5D6A; color: #fff;
+    padding: 16px 22px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+.call-btn:hover { transform: translateY(-3px); }
+
+/* FOOTER */
+footer { background: #222; color: white; text-align: center; padding: 25px 0; font-size: 14px; }
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    nav .logo img { height: 40px; }
+    .nav-container { padding: 12px 15px; }
+    header { padding-top: 100px; padding-bottom: 40px; }
+    header h1 { font-size: 28px; max-width: 90%; }
+    header p { font-size: 16px; max-width: 90%; margin-bottom: 20px; }
+    .btn { padding: 14px 24px; font-size: 14px; }
+    .services-grid { flex-direction: column; gap: 20px; align-items: center; }
+    .review { padding-left: 15px; margin-bottom: 20px; }
+    .review p { font-size: 14px; }
+    .hamburger { display: flex; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav .logo img { height: 45px; }
+    .nav-container { padding: 15px 18px; }
+    header { padding-top: 120px; padding-bottom: 50px; }
+    header h1 { font-size: 36px; }
+    header p { font-size: 18px; }
+    .services-grid { gap: 20px; }
+    .service h3 { font-size: 18px; }
+    .review p { font-size: 15px; }
+}
