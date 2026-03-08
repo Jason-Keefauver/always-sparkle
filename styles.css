@@ -99,10 +99,10 @@ nav .logo img:hover { transform: scale(1.05); transition: transform 0.2s ease; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* HERO */
+
+
 header {
     position: relative;
-    background: url('https://source.unsplash.com/1600x900/?clean,home,interior') no-repeat center center;
-    background-size: cover;
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -113,21 +113,44 @@ header {
     overflow: visible;
     padding-top: 140px;
     padding-bottom: 60px;
+
+    /* Gradient overlay + hero image */
+    background: 
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('hero.jpg') no-repeat center center;
+    background-size: cover;
+    transition: transform 10s ease;
 }
-header::before {
-    content: '';
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.45);
-    z-index: 0;
+
+header:hover {
+    transform: scale(1.02); /* subtle zoom on hover */
 }
+
 header h1, header p, header .btn {
-    position: relative; z-index: 1;
-    opacity: 0; transform: translateY(20px);
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
+
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* subtle glow for readability */
 }
-header h1 { animation-delay: 0.2s; font-size: 48px; color: #1E5D6A; margin-bottom: 20px; max-width: 800px; }
-header p { animation-delay: 0.4s; font-size: 22px; margin-bottom: 30px; max-width: 600px; }
+
+header h1 { 
+    animation-delay: 0.2s; 
+    font-size: 48px; 
+    color: ##1E5D6A; 
+    margin-bottom: 20px; 
+    max-width: 800px; 
+}
+
+header p { 
+    animation-delay: 0.4s; 
+    font-size: 22px; 
+    margin-bottom: 30px; 
+    max-width: 600px; 
+}
+
 .btn {
     display: inline-block;
     padding: 16px 32px;
@@ -139,7 +162,11 @@ header p { animation-delay: 0.4s; font-size: 22px; margin-bottom: 30px; max-widt
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-.btn:hover { background: #FF6B61; transform: translateY(-2px); }
+
+.btn:hover { 
+    background: #FF6B61; 
+    transform: translateY(-2px); 
+}
 
 /* ANIMATION KEYFRAMES */
 @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
