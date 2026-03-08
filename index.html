@@ -9,21 +9,59 @@
 <body>
 
   <!-- NAVBAR -->
-<nav>
-  <div class="nav-container">
-    <div class="logo">
-      <img src="logo.png" alt="Always Sparkle Cleaners Logo">
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.png" alt="Always Sparkle Cleaners Logo">
+      </div>
+      <a href="tel:7206917274" class="nav-cta-btn">Book Now</a>
     </div>
-    <a href="tel:7206917274" class="nav-cta-btn">Book Now</a>
-  </div>
-</nav>
+  </nav>
 
   <!-- HERO -->
-  <header>
+<header>
+  <div class="hero-content">
     <h1>Always Sparkle Cleaners</h1>
     <p>The Premier Cleaning Service for Colorado Springs</p>
-    <a href="tel:7206917274" class="btn">Book Now</a>
-  </header>
+    <div class="hero-buttons">
+      <a href="tel:7206917274" class="call-btn">📞 Call</a>
+      <a href="sms:7206917274" class="text-btn">💬 Text</a>
+    </div>
+  </div>
+</header>
+
+  <!-- TRUST BAR -->
+  <section id="trust-bar">
+    <div class="container trust-grid">
+      <div>⭐ 5-Star Service</div>
+      <div>✔ Locally Owned</div>
+      <div>✔ Satisfaction Guaranteed</div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews fade-in">
+    <div class="container">
+      <h2>What Our Clients Are Saying</h2>
+      <div class="review-grid">
+        <div class="review">
+          ⭐⭐⭐⭐⭐
+          <p>"Always Sparkle Cleaners did an incredible job. My house has never looked better!"</p>
+          <span>— Sarah M.</span>
+        </div>
+        <div class="review">
+          ⭐⭐⭐⭐⭐
+          <p>"Professional, reliable, and super thorough. Highly recommend them."</p>
+          <span>— James T.</span>
+        </div>
+        <div class="review">
+          ⭐⭐⭐⭐⭐
+          <p>"My home has never looked this good. They are amazing!"</p>
+          <span>— Jessica T.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section id="services" class="fade-in">
@@ -42,46 +80,62 @@
           <h3>Move In / Move Out</h3>
           <p>Detailed cleaning that prepares homes and apartments for new occupants.</p>
         </div>
+        <div class="service">
+          <h3>Recurring Cleaning</h3>
+          <p>Weekly, bi-weekly, or monthly cleaning schedules.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section id="reviews" class="reviews fade-in">
+  <!-- WHY CHOOSE US -->
+  <section id="why-us">
     <div class="container">
-      <h2>What Our Clients Are Saying</h2>
-      <div class="review">
-        <p>"Always Sparkle Cleaners did an incredible job. My house has never looked better!"</p>
-        <strong>— Sarah M.</strong>
-      </div>
-      <div class="review">
-        <p>"Professional, reliable, and super thorough. Highly recommend them."</p>
-        <strong>— James T.</strong>
-      </div>
+      <h2>Why Choose Us</h2>
+      <ul class="why-list">
+        <li>✔ Locally owned and operated</li>
+        <li>✔ Reliable and professional service</li>
+        <li>✔ Attention to detail</li>
+        <li>✔ Satisfaction guaranteed</li>
+      </ul>
     </div>
   </section>
 
-  <!-- CONTACT / CALL TO ACTION -->
+  <!-- SERVICE AREA + MAP -->
+  <section id="service-area">
+    <div class="container">
+      <h2>Proudly Serving Colorado Springs</h2>
+      <p>We provide professional home cleaning services throughout Colorado Springs and nearby communities.</p>
+      <iframe
+        src="https://www.google.com/maps?q=Colorado+Springs&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
   <section id="contact" class="fade-in">
-    <div class="container">
+    <div class="container" style="text-align:center;">
       <h2>Contact Us</h2>
       <p>Call or text to schedule your cleaning today!</p>
-      <a href="tel:7206917274" class="bubble-btn">📞 Call</a>
-      <a href="sms:7206917274" class="bubble-btn">💬 Text</a>
+      <a href="tel:7206917274" class="call-btn">📞 Call</a>
+      <a href="sms:7206917274" class="text-btn">💬 Text</a>
     </div>
   </section>
+
+  <!-- FLOATING BUBBLE CTA BUTTON -->
+  <div class="floating-bubble" id="floatingBubble">
+    <a href="tel:7206917274" class="bubble-btn">📞 Call</a>
+    <a href="sms:7206917274" class="bubble-btn">💬 Text</a>
+  </div>
 
   <!-- FOOTER -->
   <footer>
     <p>&copy; <span id="year"></span> Always Sparkle Cleaners. All rights reserved.</p>
   </footer>
-
-<!-- floatingBubble CTA button -->
-  <div class="floating-bubble" id="floatingBubble">
-  <a href="tel:7206917274" class="bubble-btn">📞 Call</a>
-  <a href="sms:7206917274" class="bubble-btn">💬 Text</a>
-  
-</div>
 
   <!-- SCRIPT -->
   <script src="script.js"></script>
