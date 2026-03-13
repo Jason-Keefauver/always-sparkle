@@ -194,3 +194,14 @@ button:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .fields-wrapper {
+    width: 90%;       /* almost full width on tablets and phones */
+  }
+
+  form > * {
+    width: 100%;      /* make each input/textarea/select span the wrapper */
+    margin-bottom: 18px;
+  }
+}
+
