@@ -1,0 +1,196 @@
+/* IMPORT MODERN FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* BODY: BACKGROUND IMAGE + DARK OVERLAY */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: 0;
+}
+
+/* CARD CONTAINER */
+.application-container {
+  width: 80vw;
+  max-width: 900px;
+  height: 80vh;
+  padding: 50px;
+  background: rgba(255,255,255,0.35); /* semi-transparent */
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15);
+  margin: 20px auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateY(20px);
+  opacity: 1;
+  animation: floatIn 0.7s forwards ease-out;
+  position: relative;
+  z-index: 1; /* above dark overlay */
+}
+
+/* FLOAT-IN ANIMATION */
+@keyframes floatIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.logo-container img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* HEADING */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* FORM STYLING */
+form {
+  display: block;
+  width: 100%;
+
+}
+
+/* Wrapper centers fields inside the form */
+.fields-wrapper {
+  width: 66%;           /* 2/3 of card width */
+  max-width: 600px;     /* optional cap on very wide screens */
+  margin: 0 auto;       /* centers the wrapper horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;            /* spacing between fields */
+}
+
+form > * {
+  display: block;
+  width: 66%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* INPUTS, SELECT, TEXTAREA */
+input, select, textarea {
+  padding: 16px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.25); /* semi-transparent input background */
+  color: #292929;
+  backdrop-filter: blur(5px);
+  transition: all 0.25s ease-in-out;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: rgba(54, 54, 54, 0.7);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(30,93,106,0.5);
+  background: rgba(255,255,255,0.35);
+}
+
+/* CHECKBOXES */
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between checkboxes */
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1E5D6A; /* matches brand gradient */
+  cursor: pointer;
+}
+
+/* LABELS */
+label {
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* SUBMIT BUTTON */
+button {
+  padding: 16px;
+  background: linear-gradient(135deg, #1E5D6A, #1F8A95);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(30,93,106,0.4);
+  background: linear-gradient(135deg, #1F8A95, #1E5D6A);
+}
+
+/* SCROLLBAR STYLING */
+.application-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.application-container::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.application-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+/* MOBILE SCROLL ADJUSTMENT */
+@media(max-height: 700px) {
+  .application-container {
+    max-height: 90vh;
+  }
+}
+
