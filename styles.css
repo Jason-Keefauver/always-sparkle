@@ -334,6 +334,7 @@ footer a {
 
 footer a:hover {
   color: #4fb6e1; /* brand highlight for text links */
+  text-decoration: none; 
 }
 
 .footer-links {
