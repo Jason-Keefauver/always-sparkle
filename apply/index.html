@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Application</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Logo */
+    img {
+      max-width: 180px;
+      margin-bottom: 30px;
+    }
+
+    /* Heading & message */
+    h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    /* Button */
+    a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #4fb6e4;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    a:hover {
+      background-color: #4fb6e4;
+      transform: scale(1.05);
+    }
+
+    /* Small note */
+    .note {
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <p><img src="logo.png" alt="Company Logo"></p>
+
+
+  <h1>Redirecting to application…</h1>
+
+
+  <p>You’ll be taken to the application now.</p>
+
+
+  <a href="https://always-sparkle-backend.onrender.com">Go Now</a>
+
+  <p class="note">If nothing happens after a few seconds, click the button above.</p>
+
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://always-sparkle-backend.onrender.com";
+    }, 2000); 
+  </script>
+</body>
+</html>

@@ -317,6 +317,18 @@ h2 { text-align: center; margin-bottom: 40px; }
 /* FOOTER */
 footer { background: #222; color: white; text-align: center; padding: 25px 0; font-size: 14px; }
 
+footer a {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #0055aa;
+  text-decoration: underline;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 768px) {
     /* NAVBAR */
