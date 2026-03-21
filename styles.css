@@ -249,9 +249,9 @@ h2 { text-align: center; margin-bottom: 40px; }
 #why-us .why-list {
     list-style: none;
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
-    text-align: left;
+    text-align: center;
     
 }
 
